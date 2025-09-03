@@ -1,1 +1,9 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+@theme {
+  --color-calcGreen: #849f80;
+  --color-calcGreen2: #344132;
+  --color-calcRed: #D76464;
+  --color-calcBlue: #6072CE;
+  --shadow-button: 2px 5px 4px rgba(0, 0, 0, 0.6);
+}
