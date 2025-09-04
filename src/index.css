@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -5,5 +6,7 @@
   --color-calcGreen2: #344132;
   --color-calcRed: #D76464;
   --color-calcBlue: #6072CE;
+  --radius-2.5xl: 20px;
   --shadow-button: 2px 5px 4px rgba(0, 0, 0, 0.6);
+  --font-display: Audiowide, sans-serif;
 }
