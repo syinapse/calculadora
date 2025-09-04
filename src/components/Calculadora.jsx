@@ -45,7 +45,7 @@ function Calculadora() {
             className="bg-calcGreen h-30 rounded-3xl text-right p-5 text-5xl font-bold font-display text-calcGreen2 content-center"
             id="calcScreen"
           >
-            {number.length > 10? "arrpz" : number}
+            {number.length >= 20? "error" : number}
           </div>
         </div>
         <div className="grid auto-rows-max grid-flow-row-dense gap-5 justify-center p-7">
