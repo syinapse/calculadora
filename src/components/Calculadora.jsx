@@ -5,14 +5,23 @@ import { useState } from "react";
 
 function Calculadora() {
   const [number, setNumber] = useState("0");
- // const [operator, setOperator] = useState(null);
+  // const [operator, setOperator] = useState(null);
 
   function onSetNumber(value) {
-    return setNumber(number === '0' ? value : [number, value]) 
+    return setNumber(number === "0" ? value : [number, value]);
+  }
+
+  function onSetParantheses(state) {
+    console.log(number)
+    if (state) {
+      return setNumber((number, '('));
+    }
+    console.log(number)
+    if (number.includes("(")) return setNumber((number, ")"));
   }
 
   function onScreenClear() {
-    return setNumber('0')
+    return setNumber("0");
   }
 
   return (
@@ -22,45 +31,50 @@ function Calculadora() {
           <div
             className="bg-calcGreen h-30 rounded-3xl text-right p-5 text-5xl font-bold font-display text-calcGreen2 content-center"
             id="calcScreen"
-          >{number}</div>
+          >
+            {number}
+          </div>
         </div>
         <div className="grid auto-rows-max grid-flow-row-dense gap-5 justify-center p-7">
           <Div>
-            <CalcButton onClick={() => onScreenClear()} className="bg-calcRed text-white text-4xl hover:bg-calcRed2 transition duration-200 p-2.5 active:inset-shadow-sm inset-shadow-white">
+            <CalcButton
+              onClick={() => onScreenClear()}
+              className="bg-calcRed text-white text-4xl hover:bg-calcRed2 transition duration-200 p-2.5 active:inset-shadow-sm inset-shadow-white"
+            >
               C
             </CalcButton>
-            <CalcButton onClick={() => onSetNumber('(')}>(</CalcButton>
-            <CalcButton onClick={() => onSetNumber(')')}>)</CalcButton>
+            <CalcButton onClick={() => onSetParantheses(true)}>(</CalcButton>
+            <CalcButton onClick={() => onSetParantheses(false)}>)</CalcButton>
             <CalcButton>+/-</CalcButton>
-            <CalcButton onClick={() => onSetNumber('3.141592')}>π</CalcButton>
+            <CalcButton onClick={() => onSetNumber("3.141592")}>π</CalcButton>
           </Div>
           <div className="grid auto-rows-auto grid-flow-row gap-5">
             <Div>
-              <Numbers onClick={() => onSetNumber('7')}>7</Numbers>
-              <Numbers onClick={() => onSetNumber('8')}>8</Numbers>
-              <Numbers onClick={() => onSetNumber('9')}>9</Numbers>
+              <Numbers onClick={() => onSetNumber("7")}>7</Numbers>
+              <Numbers onClick={() => onSetNumber("8")}>8</Numbers>
+              <Numbers onClick={() => onSetNumber("9")}>9</Numbers>
               <CalcButton>%</CalcButton>
               <CalcButton>√</CalcButton>
             </Div>
 
             <Div>
-              <Numbers onClick={() => onSetNumber('4')}>4</Numbers>
-              <Numbers onClick={() => onSetNumber('5')}>5</Numbers>
-              <Numbers onClick={() => onSetNumber('6')}>6</Numbers>
+              <Numbers onClick={() => onSetNumber("4")}>4</Numbers>
+              <Numbers onClick={() => onSetNumber("5")}>5</Numbers>
+              <Numbers onClick={() => onSetNumber("6")}>6</Numbers>
               <CalcButton>x</CalcButton>
               <CalcButton>÷</CalcButton>
             </Div>
             <Div>
-              <Numbers onClick={() => onSetNumber('1')}>1</Numbers>
-              <Numbers onClick={() => onSetNumber('2')}>2</Numbers>
-              <Numbers onClick={() => onSetNumber('3')}>3</Numbers>
+              <Numbers onClick={() => onSetNumber("1")}>1</Numbers>
+              <Numbers onClick={() => onSetNumber("2")}>2</Numbers>
+              <Numbers onClick={() => onSetNumber("3")}>3</Numbers>
               <CalcButton>+</CalcButton>
               <CalcButton>-</CalcButton>
             </Div>
             <Div>
-              <Numbers onClick={() => onSetNumber('0')}>0</Numbers>
-              <Numbers onClick={() => onSetNumber('00')}>00</Numbers>
-              <Numbers onClick={() => onSetNumber(',')}>,</Numbers>
+              <Numbers onClick={() => onSetNumber("0")}>0</Numbers>
+              <Numbers onClick={() => onSetNumber("00")}>00</Numbers>
+              <Numbers onClick={() => onSetNumber(",")}>,</Numbers>
               <CalcButton className="text-white bg-calcBlue text-3xl w-57 hover:bg-indigo-500 active:bg-indigo-700 active:inset-shadow-sm inset-shadow-indigo-100">
                 =
               </CalcButton>
