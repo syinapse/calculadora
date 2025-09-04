@@ -1,7 +1,5 @@
-import React from "react";
-import Button from "./Button";
+import CalcButton from "./CalcButton";
 import Numbers from "./Numbers";
-import Operators from "./Operators";
 import Div from "./Div";
 
 function Calculadora() {
@@ -13,57 +11,51 @@ function Calculadora() {
             className="bg-calcGreen h-30 rounded-3xl text-right p-5 text-3xl font-bold font-display text-calcGreen2"
             type="text"
             disabled
-            value="47"
+            value=""
           />
         </div>
         <div className="grid auto-rows-max grid-flow-row-dense gap-5 justify-center">
           <Div>
-            <Button bgcolor="bg-calcRed" textcolor="text-white">
+            <CalcButton className="bg-calcRed text-white text-4xl hover:bg-calcRed2 transition duration-200 p-2.5 active:inset-shadow-sm inset-shadow-white">
               C
-            </Button>
-            <Button bgcolor="bg-neutral-300" textcolor="text-neutral-800">
-              (
-            </Button>
-            <Button bgcolor="bg-neutral-300" textcolor="text-neutral-800">
-              )
-            </Button>
-            <Button bgcolor="bg-neutral-300" textcolor="text-neutral-800">
-              +/-
-            </Button>
-            <button className="text-neutral-800 bg-neutral-300 font-bold shadow-button w-24 text-3xl rounded-2.5xl cursor-pointer items-center p-2">
+            </CalcButton>
+            <CalcButton>(</CalcButton>
+            <CalcButton>)</CalcButton>
+            <CalcButton>+/-</CalcButton>
+            <CalcButton className="bg-neutral-300 text-neutral-800 text-3xl hover:bg-neutral-400 hover:text-neutral-700 active:bg-neutral-500 transition duration-200 p-2.5">
               mod
-            </button>
+            </CalcButton>
           </Div>
           <div className="grid auto-rows-auto grid-flow-row gap-5">
             <Div>
               <Numbers onClick="">7</Numbers>
               <Numbers onClick="">8</Numbers>
               <Numbers onClick="">9</Numbers>
-              <Operators>%</Operators>
-              <Operators>√</Operators>
+              <CalcButton>%</CalcButton>
+              <CalcButton>√</CalcButton>
             </Div>
 
             <Div>
               <Numbers onClick="">4</Numbers>
               <Numbers onClick="">5</Numbers>
               <Numbers onClick="">6</Numbers>
-              <Operators>x</Operators>
-              <Operators>÷</Operators>
+              <CalcButton>x</CalcButton>
+              <CalcButton>÷</CalcButton>
             </Div>
             <Div>
               <Numbers onClick="">1</Numbers>
               <Numbers onClick="">2</Numbers>
               <Numbers onClick="">3</Numbers>
-              <Operators>+</Operators>
-              <Operators>-</Operators>
+              <CalcButton>+</CalcButton>
+              <CalcButton>-</CalcButton>
             </Div>
             <Div>
               <Numbers onClick="">0</Numbers>
               <Numbers onClick="">00</Numbers>
               <Numbers onClick="">,</Numbers>
-              <button className="text-white bg-calcBlue font-bold shadow-button w-[232px] text-3xl rounded-2.5xl cursor-pointer items-center p-2">
+              <CalcButton className="text-white bg-calcBlue text-3xl w-57 hover:bg-indigo-500 active:bg-indigo-700 active:inset-shadow-sm inset-shadow-indigo-100">
                 =
-              </button>
+              </CalcButton>
             </Div>
           </div>
         </div>
