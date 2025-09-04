@@ -5,16 +5,35 @@ import { useState } from "react";
 
 function Calculadora() {
   const [number, setNumber] = useState("0");
-  // const [operator, setOperator] = useState(null);
+  const [operator, setOperator] = useState(null);
+  const [firstNumber, setFirstNumber] = useState(null);
 
  function onSetNumber(value) {
+
     if (number === "0") {
-      setNumber(value);
+      setNumber(value)
+
+
     } else {
-      setNumber(number + value);
+      setNumber(number + value)
     }
   }
-
+  function onSetOperator(op) {
+    setFirstNumber(parseFloat(number))
+    setOperator(op)
+    setNumber(op)
+  }
+ function onCalculate() {
+  if(!operator) return
+  
+    if (operator === "+") {
+      const result = firstNumber + parseFloat(number)
+      setNumber(String(result))
+    }
+  
+      setFirstNumber(null)
+      setOperator(null)
+  }
   function onSetParantheses(state) {
    const openCount = (number.match(/\(/g) || []).length
     const closeCount = (number.match(/\)/g) || []).length
@@ -34,7 +53,10 @@ function Calculadora() {
   }
 
   function onScreenClear() {
-    return setNumber("0");
+     setNumber("0");
+     setFirstNumber(null)
+     setOperator(null)
+
   }
 
   return (
@@ -81,14 +103,15 @@ function Calculadora() {
               <Numbers onClick={() => onSetNumber("1")}>1</Numbers>
               <Numbers onClick={() => onSetNumber("2")}>2</Numbers>
               <Numbers onClick={() => onSetNumber("3")}>3</Numbers>
-              <CalcButton>+</CalcButton>
+              <CalcButton onClick={() => onSetOperator("+")}>+</CalcButton>
               <CalcButton>-</CalcButton>
             </Div>
             <Div>
               <Numbers onClick={() => onSetNumber("0")}>0</Numbers>
               <Numbers onClick={() => onSetNumber("00")}>00</Numbers>
               <Numbers onClick={() => onSetNumber(",")}>,</Numbers>
-              <CalcButton className="text-white bg-calcBlue text-3xl w-57 hover:bg-indigo-500 active:bg-indigo-700 active:inset-shadow-sm inset-shadow-indigo-100">
+              <CalcButton onClick={() => onCalculate()}
+               className="text-white bg-calcBlue text-3xl w-57 hover:bg-indigo-500 active:bg-indigo-700 active:inset-shadow-sm inset-shadow-indigo-100">
                 =
               </CalcButton>
             </Div>
