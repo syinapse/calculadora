@@ -109,7 +109,7 @@ function Calculadora() {
             <Div>
               <Numbers onClick={() => onSetNumber("0")}>0</Numbers>
               <Numbers onClick={() => onSetNumber("00")}>00</Numbers>
-              <Numbers onClick={() => onSetNumber(",")}>,</Numbers>
+              <Numbers onClick={() => onSetNumber(".")}>,</Numbers>
               <CalcButton onClick={() => onCalculate()}
                className="text-white bg-calcBlue text-3xl w-57 hover:bg-indigo-500 active:bg-indigo-700 active:inset-shadow-sm inset-shadow-indigo-100">
                 =
