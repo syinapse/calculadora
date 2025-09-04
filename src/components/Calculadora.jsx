@@ -7,17 +7,30 @@ function Calculadora() {
   const [number, setNumber] = useState("0");
   // const [operator, setOperator] = useState(null);
 
-  function onSetNumber(value) {
-    return setNumber(number === "0" ? value : [number, value]);
+ function onSetNumber(value) {
+    if (number === "0") {
+      setNumber(value);
+    } else {
+      setNumber(number + value);
+    }
   }
 
   function onSetParantheses(state) {
-    console.log(number)
-    if (state) {
-      return setNumber((number, '('));
+   const openCount = (number.match(/\(/g) || []).length
+    const closeCount = (number.match(/\)/g) || []).length
+    //esse metodo serve retornar corerespondencias iguais
+    /// e para nao retornar null usamod []
+  if (state) {
+      if (number === "0") {
+        setNumber("(");
+      } else {
+        setNumber(number + "(");
+      }
+    } else {
+      if (openCount > closeCount) {
+        setNumber(number + ")");
+      }
     }
-    console.log(number)
-    if (number.includes("(")) return setNumber((number, ")"));
   }
 
   function onScreenClear() {
@@ -32,7 +45,7 @@ function Calculadora() {
             className="bg-calcGreen h-30 rounded-3xl text-right p-5 text-5xl font-bold font-display text-calcGreen2 content-center"
             id="calcScreen"
           >
-            {number}
+            {number.length > 10? "arrpz" : number}
           </div>
         </div>
         <div className="grid auto-rows-max grid-flow-row-dense gap-5 justify-center p-7">
