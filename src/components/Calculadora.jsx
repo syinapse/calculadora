@@ -8,38 +8,39 @@ function Calculadora() {
   const [operator, setOperator] = useState(null);
   const [firstNumber, setFirstNumber] = useState(null);
 
- function onSetNumber(value) {
-
+  function onSetNumber(value) {
     if (number === "0") {
-      setNumber(value)
-
-
-    } else {
-      setNumber(number + value)
+      setNumber(value);
+      return
     }
+    setNumber(number + value);
   }
   function onSetOperator(op) {
-    setFirstNumber(parseFloat(number))
-    setOperator(op)
-    setNumber(op)
+    setFirstNumber(parseFloat(number));
+    setOperator(op);
+    setNumber(op);
   }
- function onCalculate() {
-  if(!operator) return
-  
-    if (operator === "+") {
-      const result = firstNumber + parseFloat(number)
-      setNumber(String(result))
+  function onCalculate() {
+    if (!operator) return;
+
+    let result = 0;
+    switch (operator) {
+      case "+":
+        result = firstNumber + parseFloat(number);
+        setNumber(String(result));
+        break;
     }
-  
-      setFirstNumber(null)
-      setOperator(null)
+
+    setFirstNumber(null);
+    setOperator(null);
   }
   function onSetParantheses(state) {
-   const openCount = (number.match(/\(/g) || []).length
-    const closeCount = (number.match(/\)/g) || []).length
+    const openCount = (number.match(/\(/g) || []).length;
+    const closeCount = (number.match(/\)/g) || []).length;
+    
     //esse metodo serve retornar corerespondencias iguais
     /// e para nao retornar null usamod []
-  if (state) {
+    if (state) {
       if (number === "0") {
         setNumber("(");
       } else {
@@ -53,10 +54,9 @@ function Calculadora() {
   }
 
   function onScreenClear() {
-     setNumber("0");
-     setFirstNumber(null)
-     setOperator(null)
-
+    setNumber("0");
+    setFirstNumber(null);
+    setOperator(null);
   }
 
   return (
@@ -67,7 +67,7 @@ function Calculadora() {
             className="bg-calcGreen h-30 rounded-3xl text-right p-5 text-5xl font-bold font-display text-calcGreen2 content-center"
             id="calcScreen"
           >
-            {number.length >= 20? "error" : number}
+            {number.length >= 20 ? "error" : number}
           </div>
         </div>
         <div className="grid auto-rows-max grid-flow-row-dense gap-5 justify-center p-7">
@@ -110,8 +110,10 @@ function Calculadora() {
               <Numbers onClick={() => onSetNumber("0")}>0</Numbers>
               <Numbers onClick={() => onSetNumber("00")}>00</Numbers>
               <Numbers onClick={() => onSetNumber(".")}>,</Numbers>
-              <CalcButton onClick={() => onCalculate()}
-               className="text-white bg-calcBlue text-3xl w-57 hover:bg-indigo-500 active:bg-indigo-700 active:inset-shadow-sm inset-shadow-indigo-100">
+              <CalcButton
+                onClick={() => onCalculate()}
+                className="text-white bg-calcBlue text-3xl w-57 hover:bg-indigo-500 active:bg-indigo-700 active:inset-shadow-sm inset-shadow-indigo-100"
+              >
                 =
               </CalcButton>
             </Div>
