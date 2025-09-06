@@ -11,7 +11,7 @@ function Calculadora() {
   function onSetNumber(value) {
     if (number === "0") {
       setNumber(value);
-      return
+      return;
     }
     setNumber(number + value);
   }
@@ -20,6 +20,7 @@ function Calculadora() {
     setOperator(op);
     setNumber(op);
   }
+
   function onCalculate() {
     if (!operator) return;
 
@@ -27,6 +28,11 @@ function Calculadora() {
     switch (operator) {
       case "+":
         result = firstNumber + parseFloat(number);
+        setNumber(String(result));
+        break;
+      case "√":
+        result = Math.sqrt(parseFloat(number.slice(1)));
+        console.log(parseFloat(number))
         setNumber(String(result));
         break;
     }
@@ -37,7 +43,7 @@ function Calculadora() {
   function onSetParantheses(state) {
     const openCount = (number.match(/\(/g) || []).length;
     const closeCount = (number.match(/\)/g) || []).length;
-    
+
     //esse metodo serve retornar corerespondencias iguais
     /// e para nao retornar null usamod []
     if (state) {
@@ -80,7 +86,7 @@ function Calculadora() {
             </CalcButton>
             <CalcButton onClick={() => onSetParantheses(true)}>(</CalcButton>
             <CalcButton onClick={() => onSetParantheses(false)}>)</CalcButton>
-            <CalcButton>+/-</CalcButton>
+            <CalcButton onClick={() => setNumber(number * -1)}>+/-</CalcButton>
             <CalcButton onClick={() => onSetNumber("3.141592")}>π</CalcButton>
           </Div>
           <div className="grid auto-rows-auto grid-flow-row gap-5">
@@ -89,7 +95,7 @@ function Calculadora() {
               <Numbers onClick={() => onSetNumber("8")}>8</Numbers>
               <Numbers onClick={() => onSetNumber("9")}>9</Numbers>
               <CalcButton>%</CalcButton>
-              <CalcButton>√</CalcButton>
+              <CalcButton onClick={() => onSetOperator("√")}>√</CalcButton>
             </Div>
 
             <Div>
