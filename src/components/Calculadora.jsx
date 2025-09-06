@@ -40,6 +40,11 @@ function Calculadora() {
         console.log(parseFloat(number))
         setNumber(String(result));
         break;
+      case "÷":
+        result = firstNumber / parseFloat(number.slice(1));
+        console.log(parseFloat(number))
+        setNumber(String(result));
+        break;
     }
 
     setFirstNumber(null);
@@ -108,7 +113,7 @@ function Calculadora() {
               <Numbers onClick={() => onSetNumber("5")}>5</Numbers>
               <Numbers onClick={() => onSetNumber("6")}>6</Numbers>
               <CalcButton onClick={() => onSetOperator("x")}>x</CalcButton>
-              <CalcButton>÷</CalcButton>
+              <CalcButton onClick={() => onSetOperator("÷")}>÷</CalcButton>
             </Div>
             <Div>
               <Numbers onClick={() => onSetNumber("1")}>1</Numbers>
