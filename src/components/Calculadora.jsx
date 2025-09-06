@@ -35,6 +35,10 @@ function Calculadora() {
         result = firstNumber - parseFloat(num);
         setNumber(String(result));
         break;
+      case "%":
+        result = firstNumber % parseFloat(num);
+        setNumber(String(result));
+        break;
       case "√":
         result = Math.sqrt(parseFloat(num));
         setNumber(String(result));
@@ -106,7 +110,7 @@ function Calculadora() {
               <Numbers onClick={() => onSetNumber("7")}>7</Numbers>
               <Numbers onClick={() => onSetNumber("8")}>8</Numbers>
               <Numbers onClick={() => onSetNumber("9")}>9</Numbers>
-              <CalcButton>%</CalcButton>
+              <CalcButton onClick={() => onSetOperator("%")}>%</CalcButton>
               <CalcButton onClick={() => onSetOperator("√")}>√</CalcButton>
             </Div>
 
