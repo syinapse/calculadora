@@ -1,7 +1,7 @@
 # 📌 Calculadora React + Vite  
 
 <p align="center">
-  <img src="[./public/preview.png](https://postimg.cc/bGTY9Lz8)" width="400" />
+  <img src="https://postimg.cc/bGTY9Lz8" width="400" />
 </p>
 
 Este projeto é uma **calculadora** desenvolvida em **React + Vite**, utilizando como base o projeto apresentado em aula de IMC, mas adaptado para realizar as **4 operações matemáticas básicas**:  
@@ -28,5 +28,6 @@ O projeto conta com **estilização personalizada** e foi implantado na **Vercel
 ## 🌍 Deploy  
 
 🔗 [Projeto na Vercel](link...)  
+
 
 
