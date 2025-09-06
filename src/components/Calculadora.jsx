@@ -56,24 +56,24 @@ function Calculadora() {
     setFirstNumber(null);
     setOperator(null);
   }
-  function onSetParantheses(state) {
-    const openCount = (number.match(/\(/g) || []).length;
-    const closeCount = (number.match(/\)/g) || []).length;
+  // function onSetParantheses(state) {
+  //   const openCount = (number.match(/\(/g) || []).length;
+  //   const closeCount = (number.match(/\)/g) || []).length;
 
-    //esse metodo serve retornar corerespondencias iguais
-    /// e para nao retornar null usamod []
-    if (state) {
-      if (number === "0") {
-        setNumber("(");
-      } else {
-        setNumber(number + "(");
-      }
-    } else {
-      if (openCount > closeCount) {
-        setNumber(number + ")");
-      }
-    }
-  }
+  //   //esse metodo serve retornar corerespondencias iguais
+  //   /// e para nao retornar null usamod []
+  //   if (state) {
+  //     if (number === "0") {
+  //       setNumber("(");
+  //     } else {
+  //       setNumber(number + "(");
+  //     }
+  //   } else {
+  //     if (openCount > closeCount) {
+  //       setNumber(number + ")");
+  //     }
+  //   }
+  // }
 
   function onScreenClear() {
     setNumber("0");
@@ -96,12 +96,12 @@ function Calculadora() {
           <Div>
             <CalcButton
               onClick={() => onScreenClear()}
-              className="bg-calcRed text-white text-4xl hover:bg-calcRed2 transition duration-200 p-2.5 active:inset-shadow-sm inset-shadow-white"
+              className="bg-calcRed text-white text-4xl w-92 hover:bg-calcRed2 transition duration-200 p-2.5 active:inset-shadow-sm inset-shadow-white"
             >
-              C
+              Clear
             </CalcButton>
-            <CalcButton onClick={() => onSetParantheses(true)}>(</CalcButton>
-            <CalcButton onClick={() => onSetParantheses(false)}>)</CalcButton>
+            {/* <CalcButton onClick={() => onSetParantheses(true)}>(</CalcButton> */}
+            {/* <CalcButton onClick={() => onSetParantheses(false)}>)</CalcButton> */}
             <CalcButton onClick={() => setNumber(number * -1)}>+/-</CalcButton>
             <CalcButton onClick={() => onSetNumber("3.141592")}>π</CalcButton>
           </Div>
