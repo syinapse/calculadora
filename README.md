@@ -1,33 +1,33 @@
-# 📌 Calculadora React + Vite  
+# 🧮 Calculadora em React + Vite + TailwindCSS  
 
 ![Calculadora](https://i.imgur.com/NZ1M35C.png)
-## 🌍 Deploy  
-🔗 [Projeto na Vercel](link...)  
 
----
+### 🌍 Deploy Vercel
+🔗 **[Acesse aqui](https://calculadora-roan-ten.vercel.app/)** 
 
-Este projeto é uma **calculadora** desenvolvida em **React + Vite**, utilizando como base o projeto apresentado em aula de IMC, mas adaptado para realizar as **6 operações matemáticas e uso de parênteses**:  
 
+## 📘 Conheça o projeto 
+
+Este projeto consiste em uma **calculadora** desenvolvida em **React.js + Vite**, com o objetivo de auxiliar os usuários a realizar as **6 operações** básicas da matemática com plano futuro de realizar **expressões algébricas**. 
+
+Sendo as seis operações:
 - ➕ Adição  
 - ➖ Subtração  
 - ✖️ Multiplicação  
 - ➗ Divisão
 - √ Raiz Quadrada
-- % Porcentagem
+- % mod
 
-O projeto conta com **estilização personalizada** e foi implantado na **Vercel**.  
+O projeto apresenta **estilização personalizada com tailwind** e deploy realizado na paltaforma **Vercel**.  
 
----
 
-## 👨‍💻 Integrantes da Equipe  
+## 👨‍💻 Integrantes do Time 
 
 - **RM: 561756** — Carlos Eduardo Sanches Mariano  
 - **RM: 562784** — Leonardo Eiji Kina  
-- **RM: 561479** — Rodrigo do Santos Abubakir  
 - **RM: 562241** — Luis Felipe Scacchetti Mariano  
+- **RM: 561479** — Rodrigo do Santos Abubakir  
 - **RM: 561958** — Vitor Ramos de Farias  
-
----
 
 
 

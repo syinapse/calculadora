@@ -24,7 +24,7 @@ function Calculadora() {
   function onCalculate() {
     if (!operator) return;
 
-    const num = number.slice(1)
+    const num = number.slice(1);
     let result = 0;
     switch (operator) {
       case "+":
@@ -141,6 +141,9 @@ function Calculadora() {
             </Div>
           </div>
         </div>
+      <footer className="text-black font-bold text-[16px] text-center">
+        <h6>Todos os Direitos reservados <span className="text-purple-500">Synapse</span> &copy;2025</h6>
+      </footer>
       </div>
     </article>
   );
