@@ -24,25 +24,27 @@ function Calculadora() {
   function onCalculate() {
     if (!operator) return;
 
+    const num = number.slice(1)
     let result = 0;
     switch (operator) {
       case "+":
-        result = firstNumber + parseFloat(number);
+        result = firstNumber + parseFloat(num);
+        setNumber(String(result));
+        break;
+      case "-":
+        result = firstNumber - parseFloat(num);
         setNumber(String(result));
         break;
       case "√":
-        result = Math.sqrt(parseFloat(number.slice(1)));
-        console.log(parseFloat(number))
+        result = Math.sqrt(parseFloat(num));
         setNumber(String(result));
         break;
       case "x":
-        result = firstNumber * parseFloat(number.slice(1));
-        console.log(parseFloat(number))
+        result = firstNumber * parseFloat(num);
         setNumber(String(result));
         break;
       case "÷":
-        result = firstNumber / parseFloat(number.slice(1));
-        console.log(parseFloat(number))
+        result = firstNumber / parseFloat(num);
         setNumber(String(result));
         break;
     }
@@ -120,7 +122,7 @@ function Calculadora() {
               <Numbers onClick={() => onSetNumber("2")}>2</Numbers>
               <Numbers onClick={() => onSetNumber("3")}>3</Numbers>
               <CalcButton onClick={() => onSetOperator("+")}>+</CalcButton>
-              <CalcButton>-</CalcButton>
+              <CalcButton onClick={() => onSetOperator("-")}>-</CalcButton>
             </Div>
             <Div>
               <Numbers onClick={() => onSetNumber("0")}>0</Numbers>
