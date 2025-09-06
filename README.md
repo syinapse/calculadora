@@ -21,12 +21,7 @@ O projeto conta com **estilização personalizada** e foi implantado na **Vercel
 
 ---
 
-## 📂 Repositório  
-
-🔗 [Link para o Repositório](https://github.com/syinapse/calculadora)  
-
----
-
 ## 🌍 Deploy  
 
 🔗 [Projeto na Vercel](link...)  
+
