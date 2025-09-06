@@ -2,13 +2,14 @@
 
 ![Calculadora](https://i.imgur.com/NZ1M35C.png)
 
-Este projeto é uma **calculadora** desenvolvida em **React + Vite**, utilizando como base o projeto apresentado em aula de IMC, mas adaptado para realizar as **4 operações matemáticas básicas e uso de parênteses**:  
+Este projeto é uma **calculadora** desenvolvida em **React + Vite**, utilizando como base o projeto apresentado em aula de IMC, mas adaptado para realizar as **6 operações matemáticas e uso de parênteses**:  
 
 - ➕ Adição  
 - ➖ Subtração  
 - ✖️ Multiplicação  
 - ➗ Divisão
-
+- √ Raiz Quadrada
+- % Porcentagem
 
 O projeto conta com **estilização personalizada** e foi implantado na **Vercel**.  
 
@@ -27,6 +28,7 @@ O projeto conta com **estilização personalizada** e foi implantado na **Vercel
 ## 🌍 Deploy  
 
 🔗 [Projeto na Vercel](link...)  
+
 
 
 
